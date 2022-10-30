@@ -1,0 +1,61 @@
+@use "../../config/variables" as var;
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+.form {
+    & input {
+        display: block;
+        margin-bottom: 1rem;
+
+        &[type="text"] {
+            border: 2px solid white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            -webkit-border-radius: 0.5rem;
+            -moz-border-radius: 0.5rem;
+            -ms-border-radius: 0.5rem;
+            -o-border-radius: 0.5rem;
+        }
+
+        &::placeholder {
+            color: white;
+        }
+    }
+    & button {
+        padding: 0.5rem 1rem;
+        background-color: var.$primary;
+        color: white;
+        border-radius: 0.3rem;
+        -webkit-border-radius: 0.3rem;
+        -moz-border-radius: 0.3rem;
+        -ms-border-radius: 0.3rem;
+        -o-border-radius: 0.3rem;
+    }
+}
+
+.cartModal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #101566;
+    padding: 1rem;
+
+    &__title {
+        text-align: center;
+        display: block;
+        font-weight: bold;
+        color: white;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+
+        &__title {
+            color: white;
+        }
+    }
+}

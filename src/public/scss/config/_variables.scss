@@ -1,0 +1,100 @@
+$fonts: "Montserrat-Thin", "Montserrat-Light", "Montserrat-Regular",
+    "Montserrat-Bold";
+@each $font in $fonts {
+    @font-face {
+        font-family: $font;
+        src: url("/fonts/#{$font}.ttf");
+    }
+}
+
+/* colors */
+$primary: #d10024;
+$secondary: #15161d;
+$background: #fff;
+$paper: #f3f4fa;
+$grayLight: #e4e7ed;
+$textBlack: #000;
+$textWhite: #fff;
+$textSecondary: lighten(
+    $color: $secondary,
+    $amount: 12,
+);
+$textAdminGray: darken(
+    $color: $grayLight,
+    $amount: 50,
+);
+@mixin textAdmin {
+    color: textAdminGray;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+$textAdmin: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$error: #dc2626;
+$success: #0a4a22;
+/* fonts */
+$thin: "Montserrat-Thin";
+$light: "Montserrat-Light";
+$medium: "Montserrat-Regular";
+$bold: "Montserrat-Bold";
+
+/* media queries */
+
+@mixin m_laptop {
+    @media (max-width: 1250px) {
+        @content;
+    }
+}
+@mixin m_tablet {
+    @media (max-width: 850px) {
+        @content;
+    }
+}
+@mixin m_miniTablet {
+    @media (max-width: 650px) {
+        @content;
+    }
+}
+@mixin m_cellphone {
+    @media (max-width: 380px) {
+        @content;
+    }
+}
+
+/* uitls */
+@mixin linea {
+    outline: 1px solid $text;
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        @content;
+    }
+}
+
+/* Shadows */
+@mixin shadow-sm {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+@mixin shadow {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+@mixin shadow-md {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+@mixin shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+@mixin shadow-xl {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+@mixin shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+@mixin shadow-inner {
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}

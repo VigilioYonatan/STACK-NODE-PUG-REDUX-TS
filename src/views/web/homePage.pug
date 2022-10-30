@@ -1,0 +1,26 @@
+
+
+include ../layout/webLayout
+    div#cart
+    div(style="margin:2rem") 
+        span Carrito 
+        span(style="background-color:red;padding:.1rem .35rem;border-radius:100%" id="carritoQTY") 
+    div(style="display:flex; gap:1rem" id="productos")
+        each producto in productos     
+            div(style="display:flex;flex-direction:column;align-items:center") 
+                img(src="https://cdn.monstercat.com/share.png" width=120)
+                div(style="display:flex;flex-direction:column;gap:.5rem;justify-content:center;align-items:center")
+                    span(style="font-weight:bold;color:white") #{producto.title}
+                    precio(style="font-weight:bold;color:red;font-size:1.5rem") $ #{producto.precio}
+                    button(style="font-weight:bold;color:white;font-size:1rem;background-color:#232B99;padding:.5rem 2rem;cursor:pointer" data-id=producto.id class="btnPrecio") Add
+        endeach
+//-     form.form#formulario
+//-         input(type="text" placeholder="Nombre" name="nombre")
+//-         input(type="text" placeholder="apellido" name="apellido" )
+//-         input(type="file"  )
+//-         button(type="submit")   Enviar   
+//- div(style="display:flex;align-content:center")
+//-         button#more +
+//-         span#total 0 
+//-         button#less -
+include ../layout/webFooter
